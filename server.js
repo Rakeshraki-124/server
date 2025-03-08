@@ -6,7 +6,7 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 10000; // Use Render's assigned port
+const port = process.env.PORT || 8080; // Use Render's assigned port
 
 console.log(`Using port: ${port}`);
 
