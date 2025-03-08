@@ -38,7 +38,7 @@ app.post("/upload", upload.single("file"), (req, res) => {
         return res.status(400).json({ error: "No file uploaded" });
     }
     console.log("File uploaded:", req.file.filename);
-    res.json({ fileUrl: `https://your-app.onrender.com/uploads/${req.file.filename}` });
+res.json({ fileUrl: `https://${req.hostname}/uploads/${req.file.filename}` });
 });
 
 console.log("Trying to start the server...");
