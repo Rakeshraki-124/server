@@ -6,7 +6,7 @@ const cors = require("cors");
 const path = require("path");
 
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 10000; // Use Render's assigned port
 
 console.log(`Using port: ${port}`);
 
@@ -38,12 +38,12 @@ app.post("/upload", upload.single("file"), (req, res) => {
         return res.status(400).json({ error: "No file uploaded" });
     }
     console.log("File uploaded:", req.file.filename);
-    res.json({ fileUrl: `http://localhost:${port}/uploads/${req.file.filename}` });
+    res.json({ fileUrl: `https://your-app.onrender.com/uploads/${req.file.filename}` });
 });
 
 console.log("Trying to start the server...");
 
 // Start Server
 app.listen(port, () => {
-    console.log(`✅ Server running at http://localhost:${port}`);
+    console.log(`✅ Server running at https://your-app.onrender.com`);
 });
